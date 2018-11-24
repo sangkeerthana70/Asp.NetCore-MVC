@@ -14,13 +14,21 @@ namespace MvcMovie.Controllers
         // 
         // GET: /HelloWorld/
 
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my default action...";
+            return View();
         }
 
+        // GET: /HelloWorld/Welcome/ 
+        // Requires using System.Text.Encodings.Web;
+        // parameter format HelloWorld/Welcome?name=anu&numTimes=4
+        //public string Welcome(string name, int numTimes = 1)
+        //{
+        //return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+        //}
         // 
-        // GET: /HelloWorld/Welcome/        
+        // GET: /HelloWorld/Welcome/ 
+        //parameter format /HelloWorld/Welcome/3?name=anu
         public string Welcome(string name, int ID = 1)
         {
             return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
